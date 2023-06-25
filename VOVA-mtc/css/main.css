@@ -1,0 +1,49 @@
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider div {
+    position: relative;
+  }
+  
+  .slider img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 10px;
+  }
+  
+  .slick-prev svg, .slick-next svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .slick-prev svg path, .slick-next svg path {
+    fill: #fff;
+  }

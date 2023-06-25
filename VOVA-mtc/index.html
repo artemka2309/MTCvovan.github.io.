@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МТС - сотовый оператор</title>
+  <!-- Подключение стилей Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <!-- Добавляем ссылку на библиотеку jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/gsap/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/scrollxp/dist/scrollxp.min.js"></script>
+  <style>
+      /* Стили для медиа-запроса */
+    @media (min-width: 768px) {
+      .md\:hidden {
+        display: none !important;
+      }
+      .md\:block {
+        display: block !important;
+      }
+    }
+      /* Стили для медиа-запроса */
+    @media (min-width: 768px) {
+      #mobile-menu {
+        display: none;
+      }
+    }
+      .logo {
+    width: 45px; 
+    height: auto;
+      }
+  
+    .scrolling-touch::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrolling-touch {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+      /* Скрыть слайдер на устройствах с шириной экрана до 768px */
+    @media (max-width: 768px) {
+      #slider-container {
+        display: none;
+      }
+    }
+</style>
+    
+</head>
+<body class="bg-gray-100">
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+    <header class="">
+      <nav class="bg-white shadow ">
+        <div class=" mx-auto px-4 ml-5 mr-5">
+
+          <div class="hidden md:block pt-2 pb-1 px-0 text-sm ">
+            <div class="flex items-center justify-between">
+              <div>
+                <a href="#" class="font-medium text-red-500">Частным клиентам</a>
+              </div>
+              <div class="flex space-x-4 items-center">
+                <a href="#" class="font-bold text-gray-400 hover:text-red-500">
+                  <img src="image\free-icon-location-pin-7828943.png" alt="" class="inline-block h-3 w-3 mr-1 mb-1">
+                  Регион (Алтайский край)
+                </a>
+          
+                <a href="#" class="font-bold text-gray-400 hover:text-red-500">
+                  <img src="image\free-icon-wallet-passes-app-3884407.png" alt="" class="inline-block h-3 w-3 mr-1 mb-1">
+                  Пополнение и оплата
+                </a>
+          
+                <a href="#" class="font-bold text-gray-400 hover:text-red-500">
+                  <img src="image/question.png" alt="" class="inline-block h-3 w-3 mr-1 mb-1">
+                  Поддержка
+                </a>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="flex pt-2 pb-2 items-center mx-auto">
+
+            <div class="mr-auto pb-2">
+              <a href="#" class=""><img class="logo" src="image\browser_YdtEUUxB2Z.png" alt=""></a>
+            </div>
+            
+            <div class="flex items-center ml-auto hidden md:flex">
+              <div class="flex items-center ml-4">
+                <a href="#" class="text-white rounded-md px-3 py-2 text-sm font-medium"><img src="image\free-icon-search-4024513.png" alt="" class="inline-block h-8 w-8 mr-1 mb-1"></a>
+                <button class="bg-red-500 text-white rounded-md px-4 py-2 text-lg font-mono ml-5 rounded-lg">Войти</button>
+                <button class="bg-gray-100 text-gray-500 rounded-md  text-lg font-medium ml-5 rounded-lg  pl-1 pr-1 pb-1 pt-2">
+                  <img class="inline-block h-6 w-6 mb-1 ml-2" src="image/free-icon-search-4230232.png" alt="Фото">
+                  <span class="ml-1 mr-3">Каталог</span>
+                </button>
+              </div>
+            </div>
+            
+
+            <div class="md:hidden flex items-center ml-auto">
+              <button class="bg-red-500 text-white rounded-md px-4 mr-4 py-2 text-lg font-mono ml-5 rounded-lg">Войти</button>
+              <button class="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+          <a href="#" onclick="smoothScroll('#home')" class="block py-2 px-4 text-sm hover:bg-gray-200 text-center">Частным клиентам</a>
+          <a href="#" onclick="smoothScroll('#about')" class="block py-2 px-4 text-sm hover:bg-gray-200 text-center">Пополнение и оплата</a>
+          <a href="#" onclick="smoothScroll('#contact')" class="block py-2 px-4 text-sm hover:bg-gray-200 text-center">Поддержка</a>
+        </div>
+
+      </nav>
+    </header>
+
+    
+
+
+    <div class="slider" id="slider-container">
+      <div><img src="image\browser_V7UQMo7WNj.png" alt="Image 1"></div>
+      <div><img src="image\browser_ux1G3nFQNV.png" alt="Image 2"></div>
+      <div><img src="image\browser_RD3wDLYybx.png" alt="Image 3"></div>
+    </div>
+
+    <section class="container mx-auto py-8 px-4 md:px-8">
+      <h2 class="text-3xl font-bold mb-8">Наши преимущества</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <a href="tariffs.html" class="bg-white shadow-lg rounded-3xl p-4 flex flex-col items-center overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+          <div class="flex justify-center items-center rounded-full w-24 md:w-32 h-24 md:h-32 mb-8">
+            <img src="image/free-icon-tariff-9742125.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold">Широкий выбор тарифов</h3>
+        </a>
+        <a href="internet.html" class="bg-white shadow-lg rounded-3xl p-4 flex flex-col items-center overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+          <div class="flex justify-center items-center rounded-3xl w-24 md:w-32 h-24 md:h-32 mb-8">
+            <img src="image/free-icon-internet-1011322.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold mb-4">Высокоскоростной интернет</h3>
+        </a>
+        <a href="support.html" class="bg-white shadow-lg rounded-3xl p-4 flex flex-col items-center overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+          <div class="flex justify-center items-center rounded-3xl w-24 md:w-32 h-24 md:h-32 mb-8">
+            <img src="image/free-icon-shield-1342044.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold mb-4 ">Качественная связь</h3>
+          
+        </a>
+        <a href="conditions.html" class="bg-white shadow-lg rounded-3xl p-4 flex flex-col items-center overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+          <div class="flex justify-center items-center rounded-3xl w-24 md:w-32 h-24 md:h-32 mb-8">
+            <img src="image/free-icon-terms-and-conditions-10349096.png" alt="">
+          </div>
+          <h3 class="text-xl font-bold mb-4">Гибкие условия</h3>
+          
+        </a>
+      </div>
+    </section>
+
+    <div class="bg-gray-100 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-4">Домашний интернет от МТС</h2>
+            <p class="text-gray-700 mb-4">Подключайте высокоскоростной интернет от МТС и наслаждайтесь быстрым и стабильным подключением к сети Интернет</p>
+            <a href="#" class="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition-colors duration-300">Подключить</a>
+          </div>
+          <div class="md:w-1/2">
+            <img src="https://via.placeholder.com/600x400" alt="" class="rounded-md shadow-md">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full md:w-1/3 px-4 mb-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="image\browser_Zi34N3OHvm.png" alt="Весь МТС+" class="mx-auto mb-4 ">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">Весь МТС+</h3>
+              <p class="text-gray-700">Мобильная связь и домашний интернет</p>
+              <ul class="list-disc pl-6 mt-4 text-gray-700">
+                <li>Интернет до 240 ГБ</li>
+                <li>2000 минут / 500 SMS</li>
+                <li>Безлимитные мессенджеры и соцсети</li>
+                <li>До 6 SIM-карт</li>
+                <li>Интернет до 500 Мбит/с</li>
+                <li>До 226 каналов</li>
+                <li>Онлайн-кинотеатр KION c МАТЧ ПРЕМЬЕР</li>
+                <li>Платит один - пользуются все</li>
+                <li>Добавляйте близких и получайте по 40 ГБ за каждого</li>
+                <li>Ваша страховка на случай повреждения чужой квартиры</li>
+              </ul>
+              <p class="text-2xl font-bold mt-4">950 ₽/мес</p>
+              <p class="text-red-500">Первый месяц — бесплатно</p>
+              <a href="#" class="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition-colors duration-300 mt-4 block text-center">Подключить</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-4 mb-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="image\browser_tbwW9H1W8q.png" alt="Весь МТС+" class="mx-auto mb-4 ">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">Весь МТС Супер</h3>
+              <p class="text-gray-700">Мобильная связь и домашний интернет</p>
+              <ul class="list-disc pl-6 mt-4 text-gray-700">
+                <li>Интернет 30 ГБ</li>
+                <li>1200 минут / 100 SMS</li>
+                <li>Безлимитные мессенджеры</li>
+                <li>Интернет до 300 Мбит/с</li>
+                <li>До 231 канала</li>
+                <li>Онлайн-кинотеатр KION c МАТЧ ПРЕМЬЕР</li>
+                <li>Ваша страховка на случай повреждения чужой квартиры</li>
+                <li>Безлимитные звонки на номера МТС</li>
+                <li>Безлимитные звонки на МТС по России</li>
+              </ul>
+              <p class="text-2xl font-bold mt-4">790 ₽/мес</p>
+              <p class="text-red-500">Первые 4 месяца — по 650 ₽/мес, первый месяц — бесплатно</p>
+              <a href="#" class="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition-colors duration-300 mt-4 block text-center">Подключить</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-4 mb-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="image\browser_i1NqYfJgUB.png" alt="Весь МТС+" class="mx-auto mb-4 ">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">Весь МТС Лайт</h3>
+              <p class="text-gray-700">Мобильная связь и домашний интернет</p>
+              <ul class="list-disc pl-6 mt-4 text-gray-700">
+                <li>Интернет 30 ГБ</li>
+                <li>Звонки и SMS с оплатой только по факту использования</li>
+                <li>Одна SIM-карта</li>
+                <li>Бесплатная раздача мобильного интернета в рамках пакета</li>
+                <li>Интернет до 200 Мбит/с</li>
+                <li>В подписку входит раздача мобильного интернета из основного пакета без доплат</li>
+                <li>Подключите автоплатёж и получите скидку 10% на абонентскую плату в течение трёх месяцев</li>
+              </ul>
+              <p class="text-2xl font-bold mt-4">500 ₽/мес</p>
+              <a href="#" class="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition-colors duration-300 mt-4 block text-center">Подключить</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  
+    <footer class="bg-white py-8">
+        <div class="container mx-auto px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-black">
+              <h3 class="text-xl font-bold mb-4">О компании</h3>
+              <ul>
+                <li><a href="#" class="hover:text-gray-200">О нас</a></li>
+                <li><a href="#" class="hover:text-gray-200">Контакты</a></li>
+                <li><a href="#" class="hover:text-gray-200">Вакансии</a></li>
+              </ul>
+            </div>
+            <div class="text-black">
+              <h3 class="text-xl font-bold mb-4">Услуги</h3>
+              <ul>
+                <li><a href="#" class="hover:text-gray-200">Тарифы</a></li>
+                <li><a href="#" class="hover:text-gray-200">Мобильный интернет</a></li>
+                <li><a href="#" class="hover:text-gray-200">МТС TV</a></li>
+              </ul>
+            </div>
+            <div class="text-black">
+              <h3 class="text-xl font-bold mb-4">Поддержка</h3>
+              <ul>
+                <li><a href="#" class="hover:text-gray-200">Обратная связь</a></li>
+                <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+                <li><a href="#" class="hover:text-gray-200">Техподдержка</a></li>
+              </ul>
+            </div>
+            <div class="text-black">
+              <h3 class="text-xl font-bold mb-4">Социальные сети</h3>
+              <ul>
+                <li><a href="#" class="hover:text-gray-200">Facebook</a></li>
+                <li><a href="#" class="hover:text-gray-200">Twitter</a></li>
+                <li><a href="#" class="hover:text-gray-200">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+      <script>
+        $(document).ready(function(){
+          $('.slider').slick({
+            arrows: true,
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            swipe: true
+          });
+        });
+      </script>
+    
+    <script src="js/preloader.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.slider').slick();
+      });
+    </script>
+    <!-- <script src="js/scrollxp.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/swipper.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/scrollbyid.js"></script>
+    <script src="js/news.js"></script> -->
+</body>
+</html>
+      
